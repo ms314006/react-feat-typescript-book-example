@@ -1,10 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'; 
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
  
-const NewsReader = props => {  
+const NewsReader = () => {  
   const { id: targetNewsId } = useParams();
-  const targetNews = props.news.find(theNews => (
+  const news = useSelector(state => state.news.news);
+  const targetNews = news.find(theNews => (
     String(theNews.id) === String(targetNewsId)
   ));
 
@@ -16,8 +17,4 @@ const NewsReader = props => {
   );
 };
 
-const mapStateToProps = state => ({ 
-  news: state.news.news,
-});
- 
-export default connect(mapStateToProps)(NewsReader);
+export default NewsReader;
