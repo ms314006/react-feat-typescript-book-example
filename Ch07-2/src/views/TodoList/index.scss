@@ -1,0 +1,73 @@
+$margin : 24px;
+
+
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.todoListWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  border: 1px solid #000000;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin: $margin;
+
+    .title {
+      font-size: 32px;
+    }
+
+    .subTitle {
+        font-size: 20px;
+    }
+  }
+}
+
+.filter {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px $margin;
+}
+
+$fontInputSize: 16px;
+$formElementHeight: 50px;
+
+.form {
+  margin: $margin;
+  
+  .todoInput {
+    width: 280px;
+    height: $formElementHeight;
+    font-size: $fontInputSize;
+  }
+ 
+  .submitBtn {
+    width: 72px;
+    height: $formElementHeight;
+    font-size: $fontInputSize;
+  }
+}
+
+.todoList {
+  height: 300px;
+  overflow: scroll;
+
+  .todoItem {
+    padding: 0px 24px;
+    margin: 4px 0px;
+    background: #c9c9c9;
+    color: #ffffff;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
