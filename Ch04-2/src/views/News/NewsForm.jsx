@@ -1,8 +1,9 @@
 import React, { useState } from 'react'; 
-import { connect } from 'react-redux'; 
+import { useDispatch } from 'react-redux'; 
 import { addNews } from '../../actions/news';
  
 const NewsForm = (props) => {
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [describe, setDescribe] = useState('');
  
@@ -20,7 +21,7 @@ const NewsForm = (props) => {
       />
       <button  
         onClick={() => {
-          props.addNews({ id: Math.random(), name, describe })
+          dispatch(addNews({ id: Math.random(), name, describe }))
         }}
       >
         新增最新消息
@@ -28,11 +29,5 @@ const NewsForm = (props) => {
     </div>
   )
 };
-
-const mapDispatchToProps = dispatch => ({
-  addNews: (news) => { 
-    dispatch(addNews(news));
-  },
-});
  
-export default connect(null, mapDispatchToProps)(NewsForm);
+export default NewsForm;
