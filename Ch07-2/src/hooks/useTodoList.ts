@@ -40,7 +40,7 @@ const useTodoList = () => {
   };
 
 
-  let workTodos: Todo = todos;
+  let workTodos: Todo[] = todos;
   if (filterDoneTodo) {
     workTodos = todos.filter((todo: Todo) => !todo.done);
   }
